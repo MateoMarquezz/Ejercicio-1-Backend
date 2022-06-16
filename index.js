@@ -17,6 +17,21 @@ countMascotas(); {
     console.log(this.nmascotas.length)
 }
 
-addLibros(libros); {
-    this.libros.push(libros)
+addBooks(libros); {
+    this.libros.push({ title: title, autor: autor });
 }
+
+getBookNames(); {
+    const bookNames = this.libros.map(book => {
+        return book.title
+    })
+    console.log(bookNames);
+}
+
+const user = new User('Mateo Marquez, Carlos', [{ title: 'Ejemplo1', autor: 'Ejemplo2' }, { title: 'Ejemplo3', autor: 'Ejemplo4' }], ['Perro', 'Gata', 'Perra']);
+
+user.getNombreCompleto();
+user.addMascotas('Tortuga');
+user.countMascotas();
+user.addBooks('Ejemplo6', 'Ejemplo8');
+user.getBookNames();
